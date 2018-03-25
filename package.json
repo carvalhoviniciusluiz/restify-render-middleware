@@ -1,0 +1,38 @@
+{
+  "name": "restify-render-middleware",
+  "version": "1.0.0",
+  "description": "Simple render middleware for restify.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "./node_modules/.bin/standard --verbose | ./node_modules/.bin/snazzy",
+    "test": "jest"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">8.0.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carvalhoviniciusluiz/restify-render-middleware.git"
+  },
+  "author": "Carvalho, Vinicius Luiz <carvalho.viniciusluiz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carvalhoviniciusluiz/restify-render-middleware/issues"
+  },
+  "homepage": "https://github.com/carvalhoviniciusluiz/restify-render-middleware#readme",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  }
+}
