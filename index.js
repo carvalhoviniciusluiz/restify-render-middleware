@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const renderFactory = (options, res, next) => {
+const render = (options, res, next) => {
   const callback = (err, html) => {
     if (err) {
       throw err
@@ -16,11 +16,11 @@ const renderFactory = (options, res, next) => {
   }
 }
 
-const middlewareFactory = (options) => {
+const middleware = (options) => {
   return function (req, res, next) {
-    res.render = renderFactory(options, res, next)
+    res.render = render(options, res, next)
     next()
   }
 }
 
-module.exports = middlewareFactory
+module.exports = middleware
