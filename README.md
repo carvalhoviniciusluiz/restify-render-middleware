@@ -3,14 +3,18 @@ Another middleware to render pages with restify. Inspired by [restify-render](ht
 
 [![standard][standard-image]][standard-url]
 [![travis][travis-image]][travis-url]
+[![Code Coverage][coverage-image]][coverage-url]
 [![npm][npm-image]][npm-url]
 
-[travis-image]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware.svg?branch=master
-[travis-url]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware
-[npm-image]: https://img.shields.io/npm/v/restify-render-middleware.svg?style=flat
-[npm-url]: https://npmjs.org/package/restify-render-middleware
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
+[travis-image]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware.svg?branch=master
+[travis-url]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware
+[coverage-image]: https://scrutinizer-ci.com/g/carvalhoviniciusluiz/restify-render-middleware/badges/quality-score.png?b=master
+[coverage-url]: https://scrutinizer-ci.com/g/carvalhoviniciusluiz/restify-render-middleware/?branch=master
+[npm-image]: https://img.shields.io/npm/v/restify-render-middleware.svg?style=flat
+[npm-url]: https://npmjs.org/package/restify-render-middleware
+
 
 ### Installation:
 ```
@@ -26,7 +30,7 @@ This example is [available here as well](./example/server.js).
 'use strict'
 
 const restify = require('restify')
-const render = require('..')
+const render = require('restify-render-middleware')
 const cons = require('consolidate')
 
 const server = restify.createServer()
