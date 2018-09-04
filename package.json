@@ -14,8 +14,8 @@
     "prepublishOnly": "npm run test"
   },
   "files": [
-    "types/",
-    "index.js"
+    "dist/",
+    "types/"
   ],
   "jest": {
     "testEnvironment": "node",
