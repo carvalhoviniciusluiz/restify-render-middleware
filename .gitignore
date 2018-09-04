@@ -2,8 +2,9 @@
 node_modules/
 *.log*
 /*.js
+
+# This module uses NPM's lockfile instead
 yarn.lock
-package-lock.json
 
 # Editor directories and files
 .idea
