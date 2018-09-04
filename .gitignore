@@ -1,10 +1,17 @@
 .DS_Store
 node_modules/
 *.log*
-/*.js
+
+# This module uses NPM's lockfile instead
 yarn.lock
-package-lock.json
 
 # Editor directories and files
 .idea
 .vscode
+
+# TypeScript2 cache
+.cache/
+
+# Generated sources and type definitions
+dist/
+types/

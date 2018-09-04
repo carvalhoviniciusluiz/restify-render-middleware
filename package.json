@@ -4,14 +4,19 @@
   "description": "Simple render middleware for restify.",
   "author": "Carvalho, Vinicius Luiz <carvalho.viniciusluiz@gmail.com>",
   "license": "MIT",
-  "main": "index.js",
-  "types": "types/default/index.d.ts",
+  "main": "dist/restify-render-middleware.cjs.js",
+  "types": "types/index.d.ts",
+  "module": "dist/restify-render-middleware.es.js",
   "scripts": {
-    "build": "tsc",
+    "build": "bili src/index.ts",
     "test": "ts-node jest.startup.ts --detectOpenHandles --forceExit --no-cache",
     "pretest": "npm run build",
     "prepublishOnly": "npm run test"
   },
+  "files": [
+    "dist/",
+    "types/"
+  ],
   "jest": {
     "testEnvironment": "node",
     "transform": {
@@ -40,9 +45,11 @@
     "@types/jest": "^23.3.1",
     "@types/pug": "^2.0.4",
     "@types/restify": "^7.2.4",
+    "bili": "^3.1.2",
     "jest": "^23.5.0",
     "jest-cli": "^23.5.0",
     "restify": "^7.2.1",
+    "rollup-plugin-typescript2": "^0.17.0",
     "ts-jest": "^23.1.4",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3"

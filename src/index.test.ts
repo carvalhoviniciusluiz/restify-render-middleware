@@ -1,7 +1,7 @@
 import 'jest'
 
 import path = require('path')
-import middleware = require('.')
+import middleware from '.'
 
 test('should throw exception with empty object', (done) => {
   const req = <any>{}
