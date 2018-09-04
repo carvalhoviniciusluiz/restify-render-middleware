@@ -1,1 +1,5 @@
-test/
+src/
+.DS_Store
+*.log
+jest.startup.ts
+tsconfig.json

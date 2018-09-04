@@ -1,13 +1,10 @@
 # restify-render-middleware
 Another middleware to render pages with restify. Inspired by [restify-render](https://github.com/greduan/restify-render)
 
-[![standard][standard-image]][standard-url]
 [![travis][travis-image]][travis-url]
 [![Code Coverage][coverage-image]][coverage-url]
 [![npm][npm-image]][npm-url]
 
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: http://standardjs.com/
 [travis-image]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware.svg?branch=master
 [travis-url]: https://travis-ci.org/carvalhoviniciusluiz/restify-render-middleware
 [coverage-image]: https://scrutinizer-ci.com/g/carvalhoviniciusluiz/restify-render-middleware/badges/quality-score.png?b=master
@@ -18,7 +15,7 @@ Another middleware to render pages with restify. Inspired by [restify-render](ht
 
 ### Installation:
 ```
-npm install restify-render-middleware --save
+npm i restify-render-middleware -S
 ```
 
 ### Note:
@@ -26,16 +23,15 @@ Requires Node ``>8.0.0``.
 
 ### Example:
 This example is [available here as well](./example/server.js).
-```javascript
+```js
 'use strict'
 
 const restify = require('restify')
 const render = require('restify-render-middleware')
-const cons = require('consolidate')
 
 const server = restify.createServer()
 server.use(render({
-  engine: cons.pug,
+  engine: 'pug',
   dir: __dirname
 }))
 
@@ -48,6 +44,30 @@ server.listen(8080, function () {
 })
 
 ```
+
+__NOTE__: if you need another engine to render the view, simply install
+
+```js
+npm install swig-templates
+```
+
+To use you must configure an object
+
+```js
+server.use(render({
+  engine: {
+    name: 'swig',
+    extname: 'html'
+  },
+  dir: __dirname
+}))
+
+server.get('/:name', function (req, res) {
+  res.render('view', { name: req.params.name || 'nameless' })
+})
+```
+In this case you do not need to configure the extension to viewer. For a list of supported engines [go to the link.](https://www.npmjs.com/package/consolidate#supported-template-engines)
+
 ### Tests
 ```shell
 npm test
