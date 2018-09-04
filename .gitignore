@@ -1,7 +1,6 @@
 .DS_Store
 node_modules/
 *.log*
-/*.js
 
 # This module uses NPM's lockfile instead
 yarn.lock
@@ -10,6 +9,9 @@ yarn.lock
 .idea
 .vscode
 
+# TypeScript2 cache
+.cache/
+
 # Generated sources and type definitions
-index.js
+dist/
 types/

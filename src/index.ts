@@ -1,6 +1,6 @@
-import path = require('path')
-import restify = require('restify')
-import cons = require('consolidate')
+import * as path from 'path'
+import * as restify from 'restify'
+import cons from 'consolidate'
 
 const isString = (val) => typeof val === 'string'
 const isObject = (val) => typeof val === 'object'
@@ -52,4 +52,4 @@ function middleware (options: object): restify.RequestHandler {
   }
 }
 
-export = middleware
+export default middleware
