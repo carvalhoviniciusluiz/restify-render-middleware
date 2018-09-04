@@ -2,12 +2,29 @@ import * as path from 'path'
 import * as restify from 'restify'
 import cons from 'consolidate'
 
-const isString = (val) => typeof val === 'string'
-const isObject = (val) => typeof val === 'object'
-const isFunction = (val) => typeof val === 'function'
+export type Valid = (val: string) => boolean
+export type Format = (name: string, extname: string) => string
+export type Rendering = (view: string, state: object, fn?: Function) => any
+export type Render = (options: any, res: restify.Response) => Rendering
+export type CallbackRender = (err: Error, html: string) => void
+export interface OptionsRender {
+  engine: any
+  dir: string
+}
+export type Middleware = (options: object) => restify.RequestHandler
 
-const format  = (name: string, extname: string) => {
-  const regex = new RegExp(`.${extname}`)
+declare module 'restify' {
+  export interface Response {
+    render: Function
+  }
+}
+
+const isString: Valid = (val) => typeof val === 'string'
+const isObject: Valid = (val) => typeof val === 'object'
+const isFunction: Valid = (val) => typeof val === 'function'
+
+const format: Format = (name: string, extname: string) => {
+  const regex: RegExp = new RegExp(`.${extname}`)
 
   if (regex.test(name)) {
     return name
@@ -16,8 +33,8 @@ const format  = (name: string, extname: string) => {
   return `${name}.${extname}`
 }
 
-const render = (options: any, res: restify.Response) => {
-  const callback = (err, html) => {
+const render: Render = (options: OptionsRender, res: restify.Response) => {
+  const callback: CallbackRender = (err: Error, html: string) => {
     if (err) {
       throw err
     }
@@ -26,7 +43,7 @@ const render = (options: any, res: restify.Response) => {
     res.end(html)
   }
   return function (view: string, state: object = {}, fn?: Function) {
-    const message = `Engine '${JSON.stringify(options.engine)}' nonexistent`
+    const message: string = `Engine '${JSON.stringify(options.engine)}' nonexistent`
 
     if (!options || !options.engine) {
       return fn(new Error(message))
@@ -45,9 +62,9 @@ const render = (options: any, res: restify.Response) => {
   }
 }
 
-function middleware (options: object): restify.RequestHandler {
+const middleware: Middleware = (options: object): restify.RequestHandler => {
   return (_req: restify.Request, res: restify.Response, next: restify.Next) => {
-    (<any>res).render = render(options, res)
+    res.render = render(options, res)
     next()
   }
 }

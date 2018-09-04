@@ -15,3 +15,4 @@ yarn.lock
 # Generated sources and type definitions
 dist/
 types/
+src/*.js
