@@ -8,3 +8,7 @@ package-lock.json
 # Editor directories and files
 .idea
 .vscode
+
+# Generated sources and type definitions
+index.js
+types/

@@ -12,6 +12,10 @@
     "pretest": "npm run build",
     "prepublishOnly": "npm run test"
   },
+  "files": [
+    "types/",
+    "index.js"
+  ],
   "jest": {
     "testEnvironment": "node",
     "transform": {
