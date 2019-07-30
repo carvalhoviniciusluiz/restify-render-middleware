@@ -1,6 +1,6 @@
 {
   "name": "restify-render-middleware",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple render middleware for restify.",
   "author": "Carvalho, Vinicius Luiz <carvalho.viniciusluiz@gmail.com>",
   "license": "MIT",
@@ -42,21 +42,21 @@
   "homepage": "https://github.com/carvalhoviniciusluiz/restify-render-middleware#readme",
   "devDependencies": {
     "@types/consolidate": "0.0.34",
-    "@types/jest": "^23.3.1",
+    "@types/jest": "^23.3.14",
     "@types/pug": "^2.0.4",
-    "@types/restify": "^7.2.4",
-    "bili": "^3.1.2",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0",
-    "restify": "^7.2.1",
-    "rollup-plugin-typescript2": "^0.17.0",
-    "ts-jest": "^23.1.4",
+    "@types/restify": "^7.2.12",
+    "bili": "^3.4.2",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "rollup-plugin-typescript2": "^0.17.2",
+    "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.3"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "consolidate": "^0.15.1",
-    "pug": "^2.0.3"
+    "pug": "^2.0.4",
+    "restify": "^7.7.0"
   },
   "keywords": [
     "restify",
