@@ -38,7 +38,6 @@ const render: Render = (options: OptionsRender, res: restify.Response) => {
     if (err) {
       throw err
     }
-    res.setHeader('Content-Type', 'text/html')
     res.writeHead(200)
     res.end(html)
   }
